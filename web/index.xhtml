@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+            <style type="text/css">
+                .ui-widget .ui-widget {
+                    font-size: 9pt;
+                }
+            </style>
+        </h:head>
+        <h:body>
+            <h:form id="form" enctype="multipart/form-data">
+                <input type="hidden" name="nombre" value="#{param['nombre']}"/>
+                <p:fileUpload fileUploadListener="#{fileUploadController.upload}"  multiple="false" fileLimit="52428800"
+                              allowTypes="/(\.|\/)(doc|docx|xls|xlsx|pdf|png|jpg|jpeg|gif)$/"  cancelLabel="Cancelar" label="Elegir" uploadLabel="Subir">           
+                </p:fileUpload>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
+
